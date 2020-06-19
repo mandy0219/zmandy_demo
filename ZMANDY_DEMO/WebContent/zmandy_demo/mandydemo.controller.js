@@ -6,7 +6,7 @@ sap.ui.controller("zmandy_demo.mandydemo", {
 * @memberOf zmandy_demo.mandydemo
 */
 	onInit: function() {
-		var sServiceUrl ="https://MCD1809.nttdata-taiwan.com:44310/sap/opu/odata/sap/ZMM_EMP_MANDY_SRV/";
+		var sServiceUrl ="https://<host name>:<port no>/sap/opu/odata/sap/ZMM_EMP_MANDY_SRV/";
 		var oModel = new sap.ui.model.odata.ODataModel(sServiceUrl,true);
 		
 		var oJsonModel = new sap.ui.model.json.JSONModel();
@@ -85,7 +85,7 @@ sap.ui.controller("zmandy_demo.mandydemo", {
 
         OData.request({
 
-                    requestUri : "https://MCD1809.nttdata-taiwan.com:44310/sap/opu/odata/sap/ZMM_EMP_MANDY_SRV/EmployeeSet",
+                    requestUri : "<host name>:<port no>/sap/opu/odata/sap/ZMM_EMP_MANDY_SRV/EmployeeSet",
 
                     method : "GET",
 
@@ -117,7 +117,7 @@ sap.ui.controller("zmandy_demo.mandydemo", {
 
                     OData.request({
 
-                                            requestUri : "https://MCD1809.nttdata-taiwan.com:44310/sap/opu/odata/sap/ZMM_EMP_MANDY_SRV/EmployeeSet",
+                                            requestUri : "<host name>:<port no>/sap/opu/odata/sap/ZMM_EMP_MANDY_SRV/EmployeeSet",
 
                                             method : "POST",
 
@@ -165,7 +165,7 @@ sap.ui.controller("zmandy_demo.mandydemo", {
 
         OData.request({
 
-                    requestUri : "https://MCD1809.nttdata-taiwan.com:44310/sap/opu/odata/sap/ZMM_EMP_MANDY_SRV/EmployeeSet",
+                    requestUri : "<host name>:<port no>/sap/opu/odata/sap/ZMM_EMP_MANDY_SRV/EmployeeSet",
 
                     method : "GET",
 
@@ -196,8 +196,8 @@ sap.ui.controller("zmandy_demo.mandydemo", {
                                 };
 
                     OData.request({
+                                            requestUri : "<host name>:<port no>/sap/opu/odata/sap/ZMM_EMP_MANDY_SRV/EmployeeSet('"+oEntry.Empid+"')",
 
-                                            requestUri : "https://MCD1809.nttdata-taiwan.com:44310/sap/opu/odata/sap/ZMM_EMP_MANDY_SRV/EmployeeSet('"+oEntry.Empid+"')",
 
                                             method : "PUT",
 
@@ -241,7 +241,8 @@ oEntry.Empid= sap.ui.getCore().byId("Id").getValue();
 
 OData.request({
 
-        requestUri : "https://MCD1809.nttdata-taiwan.com:44310/sap/opu/odata/sap/ZMM_EMP_MANDY_SRV/EmployeeSet('" + oEntry.Empid + "')",
+        requestUri : "<host name>:<port no>/sap/opu/odata/sap/ZMM_EMP_MANDY_SRV/EmployeeSet('" + oEntry.Empid + "')",
+
 
         method : "GET",
 
@@ -272,8 +273,8 @@ OData.request({
                     };
 
         OData.request({
+                                requestUri : "<host name>:<port no>/sap/opu/odata/sap/ZMM_EMP_MANDY_SRV/EmployeeSet('"+oEntry.Empid+"')",
 
-                                requestUri : "https://MCD1809.nttdata-taiwan.com:44310/sap/opu/odata/sap/ZMM_EMP_MANDY_SRV/EmployeeSet('"+oEntry.Empid+"')",
 
                                 method : "DELETE",
 
